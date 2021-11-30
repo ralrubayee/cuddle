@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Tips
 
 from django.http import HttpResponse
 
@@ -12,4 +13,6 @@ def about(request):
 def profile(request):
   return render(request, 'profile.html')
 
+def tips(request):
+  return render(request, 'tips.html')
 # Create your views here.
