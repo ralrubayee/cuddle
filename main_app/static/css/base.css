@@ -98,6 +98,10 @@ nav li {
   max-width: 500px;
 }
 
+#logo{
+  width: 1vmin;
+}
+
 .page-header {
   display: flex;
   align-items: center;

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/tips-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="cat-container">
+  <div class="cat-img">
+
+  </div>
+
+
+  <h1>{{tipsCatgory.title}}</h1>
+  <section class="card-container">
+    {% for tips in tipsCatgory.tips_set.all %}
+      <div class="card">
+          <div class="card-content">
+            <div class="card-img-container">
+            </div>
+            <h2 class="card-title">{{ tips.title }}</h2>
+            <p>{{ tips.description }}</p>
+            <div class="cat-actions">
+            <a href="{% url 'tips_update' tips.id %}" class="btn warn">Edit</a> 
+            <a href="{% url 'tips_delete' tips.id %}" class="btn danger">Delete</a> 
+          </div>
+        </div>
+      </a>
+      </div>
+    {% endfor %}
+    
+  </section>
+
+ 
+  </div>
+</section>
+{% endblock %}

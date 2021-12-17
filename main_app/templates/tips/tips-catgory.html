@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tips-catgory.css' %}"/>
+{% endblock %} 
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Catgory list</h1>
+</section>
+<section class="card-container">
+  {% for tip in tipsCatgory %}
+    <div class="card">
+      <a href="/tips-catgory/{{ tip.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/sk8r-boi-cat.svg' %}" 
+              alt="A skater boy cat"
+            >
+          </div>
+          <h2 class="card-title">{{ tip.title }}</h2>
+          <p>{{ tip.description }}</p>
+        </div>
+    </a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
