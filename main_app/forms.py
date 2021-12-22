@@ -5,3 +5,4 @@ class TipsForm(ModelForm):
   class Meta:
     model = Tips
     fields = ['Name', 'title', 'description']
+

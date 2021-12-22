@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/tips-detail.css' %}"
+  href="{% static 'css/style.css' %}"
 />
 {% endblock %}
 
@@ -36,8 +36,24 @@
     {% endfor %}
     
   </section>
-
- 
   </div>
+
+
+<div class="page-header">
+  <h1>Add a Tip</h1>
+  
+</div>
+{% comment %} 
+  Leaving the action empty makes the form post to the same url used to display it
+{% endcomment %}
+<form 
+action="{% url 'add_tip' tipsCatgory.id %}" 
+method="post" 
+class="form-container"
+>
+  {% csrf_token %}
+  {{ tips_form.as_table }}
+  <button type="submit" class="btn submit">Submit!</button>
+</form>
 </section>
 {% endblock %}

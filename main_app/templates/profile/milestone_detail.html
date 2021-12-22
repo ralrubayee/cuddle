@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+{% comment %} New markup below {% endcomment %}
+<h3>Change {{ milestone.description }}'s photo</h3>
+<h1>{{milestone.title}} here</h1>
+<p id="file-name"></p>
+<form 
+  action="/profile/milestoneCreate/{{milestone.id}}/add_photo"
+  enctype="multipart/form-data"
+  method="POST"
+>
+  {% csrf_token %}
+  <label class="btn secondary">
+    Choose photo
+    <input type="file" name="photo-file" id="file-input">
+  </label>
+  <button type="submit" class="btn submit">Upload Photo</button>
+</form>
+{% comment %} New markup above {% endcomment %}
+</div>
+</section>
+
+
+{% endblock %}
