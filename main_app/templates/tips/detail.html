@@ -11,24 +11,21 @@
 
 {% block content %}
 
-<section class="cat-container">
-  <div class="cat-img">
-
-  </div>
-
+<section class="container">
 
   <h1>{{tipsCatgory.title}}</h1>
   <section class="card-container">
     {% for tips in tipsCatgory.tips_set.all %}
-      <div class="card">
+      <div class="post-card">
           <div class="card-content">
             <div class="card-img-container">
             </div>
-            <h2 class="card-title">{{ tips.title }}</h2>
-            <p>{{ tips.description }}</p>
+            <h2 class="post-title">{{ tips.title }}</h2>
+            <p class='desc'>{{ tips.description }}</p>
+            <p class='by'>post created by:{{tips.Name}}</p>
             <div class="cat-actions">
-            <a href="{% url 'tips_update' tips.id %}" class="btn warn">Edit</a> 
-            <a href="{% url 'tips_delete' tips.id %}" class="btn danger">Delete</a> 
+            <a  href="{% url 'tips_update' tips.id %}" class="btn warn">Edit</a> 
+            <a  href="{% url 'tips_delete' tips.id %}" class="btn danger">Delete</a> 
           </div>
         </div>
       </a>
@@ -38,9 +35,9 @@
   </section>
   </div>
 
-
+<div class='add-tip'>
 <div class="page-header">
-  <h1>Add a Tip</h1>
+  <h1>Add New Tip</h1>
   
 </div>
 {% comment %} 
@@ -55,5 +52,6 @@ class="form-container"
   {{ tips_form.as_table }}
   <button type="submit" class="btn submit">Submit!</button>
 </form>
+</div>
 </section>
 {% endblock %}

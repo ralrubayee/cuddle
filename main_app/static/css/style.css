@@ -26,22 +26,120 @@ section div a{
   text-decoration: none;
 }
 
-.milestone-card{
-  border: rgb(244, 152, 184) 3px solid;
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;    
-  }
-
 .milestone{
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
   letter-spacing: 3px;
-  color:rgb(129, 203, 201) ;
+  color:rgb(0, 0, 0) ;
+  font-size: 28px;
+}
+.card-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 50px;
+}
+
+.post-card{
+  border: 1px solid rgb(129, 203, 201);
+  box-shadow: 5px 5px 6px -1px #AAA;
+  margin: 8px;
+  padding: 6px;
+  width: 78%;
+  border-radius: 5px;
+}
+.add-tip{
+  border: rgb(244, 152, 184) 2px solid;
+  box-shadow: 5px 5px 6px -1px #AAA;
+  margin: 8px;
+  padding: 6px;
+  width: 65%;
+  border-radius: 5px;
+}
+form{
+  padding: 18px;
+}
+.desc{
+  font-size: 20px;
+}
+.post-title{
   font-size: 24px;
+  color: black;
+}
+a{
+  text-decoration: none;
+  color: rgb(104, 179, 178);
+  margin: 10px;
+  padding: 3px;
+}
+.by{
+  font-size: 16;
+}
+.milestone-card{
+  border: 2px solid rgb(244, 152, 184);
+  box-shadow: 5px 5px 6px -1px #AAA;
+  margin: 8px;
+  width: 78%;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+}
+.comp1{
+  width: 70%;
+}
+.comp2{
+  width: 30%;
+}
+.div1 {
+ height: 160px;
+ width: 160px;
+ border-radius: 5px;
+ border:  2px solid rgb(129, 203, 201);
+ color: rgb(55, 55, 55);
+ margin-top: 15px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.usr-img{
+  height: 160px;
+  width: 160px;
+  border-radius: 5px;
+}
+.div2 {
+color: black;
+font-size: 20px;
+text-align: left;
+margin-left: 5px;
+}
+.div3 { 
+color: black;
+font-size: 18px;
+text-align: left;
+margin-left: 5px;
+}
+.div4 { 
+color: black;
+font-size: 18px;
+text-align: left;
+margin-left: 5px;
+}
+.div5 { 
+color: black;
+font-size: 17px;
+text-align: left;
+margin-left: 5px;
 }

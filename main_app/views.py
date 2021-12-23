@@ -42,7 +42,7 @@ def home(request):
 def profile(request):
   milestone = Milestone.objects.filter(user=request.user)
   return render(request, 'profile/profile.html',
-   {'milestone': milestone})
+  {'milestone': milestone})
 
 
 def about(request):
@@ -71,11 +71,17 @@ def tips_detail(request, Tips_catgory_id):
 @login_required
 def add_tip(request, Tips_catgory_id):
   form = TipsForm(request.POST)
+  catgory = Tips_catgory.objects.get(id=Tips_catgory_id)
+  tips_form = TipsForm()
   if form.is_valid():
     new_tip = form.save(commit=False)
     new_tip.catgory_id = Tips_catgory_id
     new_tip.save()
-  return redirect("tips-catgory")
+  return render(request, 'tips/detail.html',  {
+    'tipsCatgory':catgory,
+    'tips_form':tips_form
+    })
+
 
 
 @login_required
@@ -106,14 +112,16 @@ class MilestoneCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+
 class TipUpdate(LoginRequiredMixin ,UpdateView):
   model = Tips
-  fields = ['Name','title','description','catgory']
+  fields = '__all__'
   success_url = '/tips-catgory/'
 
 
 class TipDelete(LoginRequiredMixin, DeleteView):
   model = Tips
   success_url = '/tips-catgory/'
+
 
 

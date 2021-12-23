@@ -26,5 +26,5 @@ urlpatterns = [
 
  path('profile/milestoneCreate/<int:milestone_id>/', views.milestone_detail, name='milestone_detail'),
 
- path('profile/milestoneCreate/<int:milestone_id>/add_photo/', views.add_photo, name='add_photo'),
+ path('profile/milestoneCreate/<int:milestone_id>/add_photo', views.add_photo, name='add_photo'),
 ]

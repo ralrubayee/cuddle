@@ -13,22 +13,27 @@
   
   {% for ms in milestone %}
   <div class='milestone-card'>
-  <h1> {{ms.description}} <h1> 
-    <p>{{ms.date}}</p>
-    <p>{{ms.get_age_display}}</p>
-    <div class="milestone-img">
-      {% if ms.photo.url %}
-      <img 
-      src="{{ms.photo.url}}" 
-      alt="A photo of {{ms.name}}"
-      class="usr-img"
-      >
-      {% else %}
-      <a href="/profile/milestoneCreate/{{ms.id}}/">add photo</a>
-      {% endif %}
-      {% endfor %}
+    <div class='comp1'>
+    <P class='div2'> {{ms.title}} <P> 
+      <p class='div3 '>on: {{ms.date}}</p>
+      <p class='div4'>age: {{ms.get_age_display}}</p>
+      <p class='div5'> {{ ms.description}}</p>
     </div>
-  </div>
+    <div class='comp2'>
+      <div  class='div1' class="milestone-img">
+        {% if ms.photo.url %}
+        <img 
+        src="{{ms.photo.url}}" 
+        alt="A photo of {{ms.name}}"
+        class="usr-img"
+        >
+        {% else %}
+        <a  href="/profile/milestoneCreate/{{ms.id}}/">add photo</a>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+    {% endfor %}
       <a href="{% url 'milestone-create' %}">add milestone</a>
 </section>
 
