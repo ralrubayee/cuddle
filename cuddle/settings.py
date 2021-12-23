@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 DEBUG_PROPAGATE_EXCEPTIONS = True
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -139,6 +139,3 @@ LOGOUT_REDIRECT_URL = 'home'
 import django_heroku
 django_heroku.settings(locals())
 
-DEBUG_PROPAGATE_EXCEPTIONS = True
-
-DEBUG = env('DEBUG') == 'True'
