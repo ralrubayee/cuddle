@@ -115,7 +115,7 @@ class MilestoneCreate(LoginRequiredMixin, CreateView):
 
 class TipUpdate(LoginRequiredMixin ,UpdateView):
   model = Tips
-  fields = '__all__'
+  fields = ['Name', 'title', 'description']
   success_url = '/tips-catgory/'
 
 

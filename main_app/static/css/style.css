@@ -143,3 +143,23 @@ font-size: 17px;
 text-align: left;
 margin-left: 5px;
 }
+.about-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about{
+  border: 2px solid rgb(244, 152, 184);
+  box-shadow: 5px 5px 6px -1px #AAA;
+  font-size: 28px;
+  width: 70%;
+  height: 400px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
