@@ -1,0 +1,1 @@
+web: gunicorn rawans-cuddle-app.wsgi

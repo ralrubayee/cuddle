@@ -8,27 +8,23 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>Catgory list</h1>
+  <h1> </h1>
 </section>
-<section 
-  id='{{tip.color}}'
-  class="card-container"
->
+<section class="catgory-page">
   {% for tip in tipsCatgory %}
     <div class="card">
       <a href="/tips-catgory/{{ tip.id }}">
-        <div class="card-content">
           <div class="card-img-container">
             <img 
               class="tips-img"
               src="{{ tip.description  }}" 
-              alt="A skater boy cat"
+              alt="catogory"
             >
           </div>
           <h2 class="card-title">{{ tip.title }}</h2>
-        </div>
     </a>
     </div>
   {% endfor %}
 </section>
+
 {% endblock %}

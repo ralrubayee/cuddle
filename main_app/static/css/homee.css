@@ -15,18 +15,6 @@ main > section {
   flex-direction: column;
 }
 
-.header-logo-container {
-  display: none;
-}
-
-.logo-container {
-  max-width: 375px;
-}
-
-.cat-container {
-  width: 80%;
-}
-
 .login {
   display: flex;
   flex-direction: column;
@@ -48,12 +36,12 @@ main > section {
 }
 
 .login label {
-  font-size: var(--font-reg);
+  font-size: 1.6rem;
   margin-bottom: 6px;
 }
 
 .login input {
-  font-size: var(--font-l);
+  font-size: 1.8rem;
   padding: 2px 4px;
 }
 
@@ -73,10 +61,10 @@ main > section {
   }
 
   .login {
-    border: var(--borders);
+    border: rgb(249, 184, 206) 6px solid;
     padding: 20px;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-box-shadow);
+    border-radius: 3px;
+    box-shadow: 5px 5px 6px -1px #AAA;
     width: 100%;
   }
 

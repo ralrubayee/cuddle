@@ -2,38 +2,47 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-}
-
-/* resets font size to be 62.5% of the user preference - 
-     in most browser configurations this will be 10px */
-:root {
-    font-size: 62.5%
-}
-
 body {
   margin: 0;
+  background-color: rgb(242, 236, 236);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+      'Helvetica Neue', sans-serif; 
+}
+
+nav ul {
+  flex-wrap: nowrap;
+  margin: 2vmin;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: ROW;
+  justify-content: center;
+
+}
+nav ul li {
+  letter-spacing: 1.3px;
+  margin: 2vmin;
+  text-decoration: none;
+  font-size:5vmin ;
+  
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color: rgb(104, 179, 178);
+}
+
+nav ul li a.active {
+  color: rgb(122, 203, 201);
+  cursor: default;
+  border-bottom: none;
 }
 
 @media only screen and (min-width: 768px) {
-  nav {
-    margin-left: 2vmin;
-    display: flex;
-    justify-content: center;
-  }
 
-  nav ul {
-    flex-wrap: nowrap;
-  }
+
 
 }
 
@@ -43,7 +52,9 @@ body {
   }
  
 
-  nav {
+  li {
     margin-left: 2vmin;
+    display: flex;
+    flex-direction: ROW;
   }
 }

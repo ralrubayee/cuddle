@@ -4,11 +4,11 @@ from datetime import date
 from django.contrib.auth.models import User
 
 AGE = (
-  ("0-3","newborn"),
-  ("3-6","baby"),
-  ("6-9","baby"),
-  ("9-12","baby"),
-  ("12-24","toddler")
+  ("0-3","0-3"),
+  ("3-6","3-6"),
+  ("6-9","6-9"),
+  ("9-12","9-12"),
+  ("12-24","12-24")
 )
 
 
