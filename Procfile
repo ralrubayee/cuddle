@@ -1,1 +1,1 @@
-web: gunicorn rawans-cuddle-app.wsgi
+web: gunicorn cuddle.wsgi

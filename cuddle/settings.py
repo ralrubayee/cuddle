@@ -13,28 +13,22 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x_+zt@)swv)ca3n72!d_*po@xop#h%njd$mzf$j^*72!v-r*#x'
-
-WSGI_APPLICATION ='rawans-cuddle-app.wsgi'
+SECRET_KEY = env('SECRET_KEY')
+DEBUG_PROPAGATE_EXCEPTIONS = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEBUG = env('DEBUG') == 'True' 
-SECRET_KEY = env('562656655545465655656465hjghhjjhgj')
-DEBUG_PROPAGATE_EXCEPTIONS = True
+
 ALLOWED_HOSTS = []
 
 
@@ -140,3 +134,11 @@ LOGIN_URL = 'home'
 LOGIN_REDIRECT_URL = 'tips-catgory'
 
 LOGOUT_REDIRECT_URL = 'home'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
+
+DEBUG = env('DEBUG') == 'True'
